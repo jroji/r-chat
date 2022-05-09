@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Contact from './components/Contact/Contact';
+import Chat from './pages/Chat/Chat';
+import List from './pages/List/List';
 
 function App() {
-  const users = [
-    { name: 'John', tel: '677777771', image: 'https://placekitten.com/200/300' },
-    { name: 'Carlos', tel: '677777771', image: 'https://placekitten.com/100/100' },
-    { name: 'María', tel: '677777771', image: 'https://placekitten.com/200/200' },
-    { name: 'Marta', tel: '677777771', image: 'https://placekitten.com/400/400' },
-  ];
-
   return (
     <>
       <header className="header">React chat</header>
       <main>
-        { users.map((contact) => <Contact
-          image={contact.image}
-          name={contact.name}
-          tel={contact.tel}></Contact>)
-        }
+        <Routes>
+          <Route path="/" element={<List/>}></Route>
+          <Route path="/chat/:id" element={<Chat/>}></Route>
+        </Routes>
       </main>
       <footer></footer>
     </>
