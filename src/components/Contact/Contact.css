@@ -5,6 +5,10 @@
     border-bottom: 1px solid var(--contact-border-color,var(--separator-color, gray));
 }
 
+.favourite {
+    background: var(--secondary-color);
+}
+
 .contact:hover {
     background: var(--contact-background, var(--accent-color));
     cursor: pointer;
